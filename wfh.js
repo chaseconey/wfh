@@ -1,6 +1,8 @@
- var program = require('commander');
+#!/usr/bin/env node
 
- program
+var program = require('commander');
+
+program
   .version('1.0.0')
   .command('find', 'Find printers on local network').alias('f')
   .command('send', 'Send out notifications of WFH').alias('s')
