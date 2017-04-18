@@ -1,0 +1,29 @@
+
+me:
+  name: Chase
+
+printer:
+  enabled: false
+  endpoint: 'http://1.1.1.1:631/printer' # Find this using `wfh find`
+  pdf:
+    dest: '/tmp/out.pdf'
+    template: |
+      ## ATTN: Mr. Boss Man
+
+      # WORKING FROM HOME TODAY
+
+      ![](https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipWiCgrSNYdc/v1/-1x-1.jpg)
+
+      # <3 The Dude
+
+slack:
+  enabled: false
+  mentionName: '@name'
+  webhookUri: 'https://hooks.slack.com/services/<key>'
+  channels:
+    - channel: '@name'
+      text: '@name is WFH today. Available via all normal methods.'
+
+email:
+  enabled: false
+  
