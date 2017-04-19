@@ -3,7 +3,7 @@
 var program = require('commander');
 
 program
-  .version('1.1.0')
+  .version('1.3.0')
   .command('find', 'Find printers on local network').alias('f')
   .command('send', 'Send out notifications of WFH').alias('s')
   .command('test', 'Test pdf generation').alias('t')
