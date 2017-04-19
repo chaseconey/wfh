@@ -5,6 +5,7 @@ let yaml = require('js-yaml');
 let colors = require('colors');
 let slack_notification = require('./lib/slack');
 let print_notification = require('./lib/print');
+let twilio_notification = require('./lib/twilio');
 
 try {
   var config = yaml.safeLoad(fs.readFileSync(`${os.homedir()}/.wfh`, 'utf8'));
@@ -28,3 +29,14 @@ if (config.slack.enabled) {
     });
   }
 }
+
+if (config.twilio.enabled) {
+  console.log("SMS enabled, sending...".white);
+
+  for (let index in config.twilio.recipients) {
+    twilio_notification(config.twilio.recipients[index], config.twilio, config.me, function() {
+      console.log("SMS Sent to ".green);
+    });
+  }
+}
+

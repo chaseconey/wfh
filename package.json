@@ -1,6 +1,6 @@
 {
   "name": "wfh",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -20,6 +20,7 @@
     "markdown-pdf": "^7.0.0",
     "mdns": "^2.3.3",
     "pdfkit": "^0.8.0",
-    "slack-node": "^0.1.8"
+    "slack-node": "^0.1.8",
+    "twilio": "^2.11.1"
   }
 }

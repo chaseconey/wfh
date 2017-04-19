@@ -7,6 +7,7 @@ A simple wfh (working from home) notification tool that may or may not be more a
 
 * Slack integration
 * Printer integration (via IPP)
+* Twilio integration for SMS action
 * Easy configuration file via yaml format
 
 ### Quickstart

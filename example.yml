@@ -1,12 +1,20 @@
 
 me:
-  name: Chase
+  # Required. Your name. Used for generated default messages when not provided
+  name: Name
 
 printer:
+  
   enabled: false
-  endpoint: 'http://1.1.1.1:631/printer' # Find this using `wfh find`
+
+  # Required. The IPP endpoint for your printer, use `wfh find` to explore printer options
+  endpoint: 'http://1.1.1.1:631/printer'
   pdf:
+
+    # Required. Temporary output directory for pdf that will get printed out
     dest: '/tmp/out.pdf'
+    
+    # Required. Markdown template to print out
     template: |
       ## ATTN: Mr. Boss Man
 
@@ -17,13 +25,43 @@ printer:
       # <3 The Dude
 
 slack:
+
   enabled: false
+
+  # Your slack mention name. Used for autogenerating messages by default.
   mentionName: '@name'
+
+  # Required. Create an Incoming Webhook for your Slack Channel and paste the key here.
   webhookUri: 'https://hooks.slack.com/services/<key>'
+  
+  # Required. List of all channels/people to send messages to.
   channels:
+    # Can be a channel by specifying '#channel' or a user specifying '@user'
     - channel: '@name'
+
+      # Optional. Text to send specified channel/user
       text: '@name is WFH today. Available via all normal methods.'
 
-email:
+# Not yet implemented
+# email:
+#   enabled: false
+
+twilio:
+
   enabled: false
+  
+  # Required. A Twilio provisioned number
+  from: +11234567899
+
+  # Required. The text to send to all recipients
+  text: 'Name is WFH today. Available via all normal methods'
+  
+  # Required. Get auth tokens from https://www.twilio.com/console
+  auth:
+    sid: <sid>
+    token: <token>
+
+  # Required. List of phone numbers to text
+  recipients:
+    - to: '+11234567899'
   
